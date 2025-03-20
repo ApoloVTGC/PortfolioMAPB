@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Education</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div class="container">
+        <div class="titulo">
+            <img src="logo_formacion.png" alt="Training Logo" class="logo">
+            Academic Education
+        </div>
+
+        <div class="opciones">
+            <div class="opcion" id="academica" onclick="mostrarVentana('academica')">Academics</div>
+            <div class="opcion" id="cursos" onclick="mostrarVentana('cursos')">Courses</div>
+            <div class="opcion" id="software" onclick="mostrarVentana('software')">Software</div>
+            <div class="opcion" id="idiomas" onclick="mostrarVentana('idiomas')">Languages</div>
+        </div>
+
+        <!-- Pop-up windows for each section -->
+        <div class="ventana" id="ventana-academica">
+            <h2>Academics</h2>
+            <div class="registro">
+                <h3>Master in Applications of Artificial Intelligence in Healthcare</h3>
+                <p><strong>Date:</strong> 2022-2023</p>
+                <p>European Center for Masters and Postgraduates (CEMP)</p>
+            </div>
+            <div class="registro">
+                <h3>Master in Biostatistics and Bioinformatics</h3>
+                <p><strong>Date:</strong> 2022-2023</p>
+                <p>European Center for Masters and Postgraduates (CEMP)</p>
+            </div>
+            <div class="registro">
+                <h3>Master in Biological Sciences</h3>
+                <p><strong>Date:</strong> 2021-2022</p>
+                <p>GoBIR Center</p>
+            </div>
+            <div class="registro">
+                <h3>Master in Molecular Oncology</h3>
+                <p><strong>Date:</strong> 2020-2021</p>
+                <p>Rey Juan Carlos University (URJC)</p>
+            </div>
+            <div class="registro">
+                <h3>Bachelor's Degree in Biochemistry</h3>
+                <p><strong>Date:</strong> 2016-2020</p>
+                <p>University of Málaga (UMA)</p>
+            </div>
+            <button onclick="cerrarVentana()">Close</button>
+        </div>
+
+        <div class="ventana" id="ventana-cursos">
+            <h2>Courses</h2>
+            <div class="registro">
+                <h3>Course in Cellular and Molecular Biology of Cancer (URJC)</h3>
+                <p><strong>Date:</strong> 2021</p>
+            </div>
+            <div class="registro">
+                <h3>Course in Molecular Pathology</h3>
+                <p><strong>Date:</strong> 2021</p>
+            </div>
+            <div class="registro">
+                <h3>Animal Experimentation Training Course A, B, and C (UGR)</h3>
+                <p><strong>Date:</strong> 2023</p>
+            </div>
+            <div class="registro">
+                <h3>Course in Descriptive Statistics and Scientific Hypothesis Testing in R (CSIC)</h3>
+                <p><strong>Date:</strong> 2023</p>
+            </div>
+            <button onclick="cerrarVentana()">Close</button>
+        </div>
+
+        <div class="ventana" id="ventana-software">
+            <h2>Software</h2>
+            <div class="registro">
+                <h3><strong>Programming and Analysis Tools:</strong></h3>
+                <ul>
+                    <li>Intermediate Python Skills</li>
+                    <li>Programming with R and RStudio</li>
+                    <li>SPSS Statistical Software</li>
+                    <li>Management of Biological Databases (Ensembl, PDB, etc.)</li>
+                    <li>Samtools Management</li>
+                    <li>Bash Scripting</li>
+                    <li>Java Programming</li>
+                    <li>Qiime2 Management</li>
+                </ul>
+            </div>
+            <button onclick="cerrarVentana()">Close</button>
+        </div>
+
+        <div class="ventana" id="ventana-idiomas">
+            <h2>Languages</h2>
+            <div class="registro">
+                <h3>Spanish (Native) <img src="espana.png" alt="Spain" width="20"></h3>
+            </div>
+            <div class="registro">
+                <h3>English (C1 Cambridge) <img src="reino_unido.png" alt="United Kingdom" width="20"></h3>
+            </div>
+            <div class="registro">
+                <h3>French (Basic) <img src="francia.png" alt="France" width="20"></h3>
+            </div>
+            <button onclick="cerrarVentana()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function mostrarVentana(id) {
+            document.querySelectorAll('.opcion').forEach(opcion => {
+                opcion.style.display = 'none';
+            });
+            document.getElementById(`ventana-${id}`).style.display = 'block';
+        }
+
+        function cerrarVentana() {
+            document.querySelectorAll('.ventana').forEach(ventana => {
+                ventana.style.display = 'none';
+            });
+            document.querySelectorAll('.opcion').forEach(opcion => {
+                opcion.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
+

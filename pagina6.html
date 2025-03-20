@@ -1,0 +1,123 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Mí</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <svg id="lineas" width="100%" height="100%" style="position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none;"></svg>
+
+    <img id="icono" class="imagen-central" src="logo_sobre_mi.png" alt="Sobre Mí" style="z-index: 2;">
+    <img id="icono-2" class="imagen-central" src="imagen_sobre_mi.png" alt="Sobre Mí" style="z-index: 2;">
+
+    <!-- Contenedor del GIF y del texto "CV" -->
+    <div id="gif-container" style="position: absolute; right: -500px; top: 1%; transform: translateY(0); z-index: 3; display: flex; flex-direction: column; align-items: center;">
+        <a href="cv.pdf" download>
+            <img id="gif" src="cv.gif" alt="GIF animado" style="width: 400px;">
+        </a>
+        <div id="cv-text" style="font-size: 3rem; font-weight: bold; margin-top: 20px; display: none;">CV</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const icono = document.getElementById('icono');
+            const icono2 = document.getElementById('icono-2');
+            const svg = document.getElementById('lineas');
+            const gifContainer = document.getElementById('gif-container');
+            const cvText = document.getElementById('cv-text');
+            const ramificaciones = [];
+
+            setTimeout(() => {
+                icono.style.opacity = 1;
+                icono.style.transform = 'scale(3)';
+
+                setTimeout(() => {
+                    icono.style.opacity = 0;
+                    icono2.style.opacity = 1;
+                }, 2000);
+            }, 100);
+
+            icono2.addEventListener('click', () => {
+                mostrarRamificaciones();
+                setTimeout(animarLineas, 500);
+                mostrarGif();
+            });
+
+            function mostrarGif() {
+                gifContainer.style.transition = 'right 1.5s ease-out';
+                gifContainer.style.right = '20%';
+
+                setTimeout(() => {
+                    cvText.style.display = 'block';
+                }, 1500);
+            }
+
+            function crearRamificacion(contenido, x, y, esDescripcion = false) {
+                const rama = document.createElement('div');
+                rama.className = 'ramificacion';
+                rama.style.transform = `translate(${x}px, ${y}px)`;
+                rama.innerHTML = contenido;
+                rama.style.opacity = 0;
+                rama.style.fontSize = '18px';
+                rama.style.fontWeight = 'bold';
+                rama.style.background = 'darkturquoise';
+                rama.style.padding = esDescripcion ? '40px' : '20px';
+                rama.style.border = '8px solid lightcyan';
+                rama.style.width = esDescripcion ? '500px' : '300px';
+                document.body.appendChild(rama);
+
+                ramificaciones.push({ element: rama, x, y });
+            }
+
+            function mostrarRamificaciones() {
+                crearRamificacion('📧 Mail: marcoapolo@ipb.csic.es', -450, -200);
+                crearRamificacion('🔗 LinkedIn: <a href="https://es.linkedin.com/in/marco-apolo-pulpillo-berrocal" target="_blank">LinkedInProfile</a>', -450, 0);
+                crearRamificacion('🔍 ORCID: <a href="https://orcid.org/0009-0007-5938-5151" target="_blank">ORCID Profile</a>', -450, 200);
+                crearRamificacion('👤 Short Description: I define myself as a hardworking person, team-oriented, resourceful and responsible individual. Well... As I was going to write here anything negative about me... ', 600, 0, true);
+            }
+
+            function animarLineas() {
+                const rectIcono2 = icono2.getBoundingClientRect();
+                const x1 = rectIcono2.left + rectIcono2.width / 2;
+                const y1 = rectIcono2.top + rectIcono2.height / 2;
+
+                ramificaciones.forEach(({ element, x, y }, index) => {
+                    const rectRama = element.getBoundingClientRect();
+                    const x2 = rectRama.left + rectRama.width / 2;
+                    const y2 = rectRama.top + rectRama.height / 2;
+
+                    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                    line.setAttribute("x1", x1);
+                    line.setAttribute("y1", y1);
+                    line.setAttribute("x2", x1);
+                    line.setAttribute("y2", y1);
+                    line.setAttribute("stroke", "black");
+                    line.setAttribute("stroke-width", "2");
+                    line.style.opacity = 0;
+                    svg.appendChild(line);
+
+                    setTimeout(() => {
+                        line.style.transition = "opacity 0.5s ease-in, stroke-dasharray 0.8s ease-out";
+                        line.style.opacity = 1;
+                        const length = Math.hypot(x2 - x1, y2 - y1);
+                        line.setAttribute("stroke-dasharray", `${length} ${length}`);
+                        line.setAttribute("stroke-dashoffset", length);
+
+                        requestAnimationFrame(() => {
+                            line.setAttribute("x2", x2);
+                            line.setAttribute("y2", y2);
+                            line.style.strokeDashoffset = '0';
+                        });
+
+                        setTimeout(() => {
+                            element.style.opacity = 1;
+                            element.classList.add('visible');
+                        }, 800);
+                    }, index * 300);
+                });
+            }
+        };
+    </script>
+</body>
+</html>

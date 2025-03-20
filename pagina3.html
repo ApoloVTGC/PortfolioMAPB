@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Recientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Registro de un proyecto -->
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto1')">Predoctoral Research Contract – Development of AI-Based Tools for Single-Cell and Spatial Transcriptomics Data Analysis 2024-In Progress </button>
+            <!-- Miniatura visible siempre -->
+            <img src="experiencia_contratomomentum.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto1" class="contenido">
+                <div class="texto-encima">
+                    <p>This research focuses on developing a fast and reliable tool for analyzing large-scale data from single-cell and spatial transcriptomics samples. The main tasks include:
+
+Implementation of an AI-based cell segregation algorithm using convolutional neural networks (CNNs) to enable precise localization of cells and organelles in biomedical images. The model is designed to function efficiently on both GPUs and CPUs, with a robust training, labeling, and validation process.
+Development of a parallel computing ecosystem, incorporating the Nextflow platform to facilitate high-performance computing, automate large-scale data analysis pipelines, and ensure reproducibility and efficiency.
+Creation of scientific computing containers using Docker and Singularity, enabling complex analyses to be portable and reproducible across different computational environments.
+Validation of results through comparison with publicly available datasets.
+Optimization of computational code and containers for seamless execution on both GPUs and CPUs.
+Dissemination of findings through publications, conferences, outreach events, and webinars on tool usage, along with the transfer of knowledge through patent development.
+This work contributes to advancing computational methods for biomedical image analysis and enhances the reproducibility and accessibility of large-scale transcriptomics research.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto2')">Technical Specialist Contract – Flow Cytometry and Cell Sorting 2022-2024</button>
+            <!-- Miniatura visible siempre -->
+            <img src="experiencia_contratocitometria.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto2" class="contenido">
+                <div class="texto-encima">
+                    <p>This research focuses on developing a fast and reliable tool for analyzing large-scale data from single-cell and spatial transcriptomics samples. The main tasks include:
+
+Implementation of an AI-based cell segregation algorithm using convolutional neural networks (CNNs) to enable precise localization of cells and organelles in biomedical images. The model is designed to function efficiently on both GPUs and CPUs, with a robust training, labeling, and validation process.
+Development of a parallel computing ecosystem, incorporating the Nextflow platform to facilitate high-performance computing, automate large-scale data analysis pipelines, and ensure reproducibility and efficiency.
+Creation of scientific computing containers using Docker and Singularity, enabling complex analyses to be portable and reproducible across different computational environments.
+Validation of results through comparison with publicly available datasets.
+Optimization of computational code and containers for seamless execution on both GPUs and CPUs.
+Dissemination of findings through publications, conferences, outreach events, and webinars on tool usage, along with the transfer of knowledge through patent development.</p>
+                </div>
+            </div>
+        </div>
+
+
+<!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto3')">Animal Facility Technician 2022-2024</button>
+            <!-- Miniatura visible siempre -->
+            <img src="experiencia_contratoanimalario.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto3" class="contenido">
+                <div class="texto-encima">
+                    <p>This position focuses on the care, management, and technical support for laboratory animals, primarily mice, but also including rats and rabbits. The main responsibilities include:
+
+Animal care and welfare, ensuring the daily monitoring of animal health, providing appropriate food, water, and environmental enrichment, and maintaining optimal housing conditions in compliance with animal welfare regulations.
+Handling and procedural support, performing routine procedures such as identification, weaning, genotyping, and sample collection, as well as assisting researchers with advanced techniques including injections, surgical procedures, and post-operative care.
+Colony management, overseeing breeding programs, maintaining accurate records of animal lineage and health status, and ensuring the proper identification and tracking of animal populations.
+Facility maintenance and biosecurity, ensuring compliance with hygiene and safety protocols, monitoring environmental parameters, and maintaining clean and controlled environments to prevent contamination.
+Regulatory compliance, adhering to ethical guidelines and legal frameworks for animal research, including the preparation of documentation for regulatory inspections and animal welfare audits.
+Technical training and support, providing guidance to researchers and new personnel on proper animal handling, procedural techniques, and the implementation of best practices in animal care.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Más registros... -->
+    </div>
+
+    <script>
+      // Función para alternar la visibilidad del contenido con animación
+      function toggleContenido(proyectoId) {
+          const contenido = document.querySelector(`#${proyectoId}`);
+          const registro = contenido.closest('.registro');
+
+          if (contenido.style.maxHeight) {
+              // Si ya está abierto, cerramos
+              contenido.style.maxHeight = null;
+              contenido.style.opacity = 0;
+              registro.classList.remove('open');
+          } else {
+              // Si está cerrado, lo mostramos con la animación
+              contenido.style.maxHeight = contenido.scrollHeight + 'px'; // Ajustamos el máximo de altura
+              contenido.style.opacity = 1;
+              registro.classList.add('open');
+          }
+      }
+    </script>
+</body>
+</html>
+

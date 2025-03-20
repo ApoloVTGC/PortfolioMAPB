@@ -1,0 +1,151 @@
+/* --- Estilos generales --- */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('fondo.png') no-repeat center center/cover;
+    background-attachment: fixed; /* Fija el fondo */
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
+
+/* --- Estilos de la página principal --- */
+.container {
+    width: 75%;
+    height: 86%;
+}
+
+
+/* --- Estilos de la página principal --- */
+.intro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.seccion a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seccion img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Animación al pasar el cursor sobre el logo */
+.seccion img:hover {
+    transform: scale(1.1);
+}
+
+.seccion p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold; /* Letra en negrita */
+    color: black; /* Letra en negro */
+}
+
+
+
+
+
+/* --- Estilos para los registros (con animación al hacer clic) --- */
+.registro {
+    background-color: #20B2AA; /* Turquesa más claro */
+    margin-top: 20px; /* Margen superior */
+    margin-bottom: 20px; /* Margen inferior */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    width: 1300px; /* Establece un ancho fijo para cada registro */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Animación general de la apertura de un registro */
+.registro.open {
+    transform: scale(1.05); /* Aumenta el tamaño al abrir */
+    transition: transform 0.3s ease;
+}
+
+/* Animación de pasar el cursor sobre el registro */
+.registro:hover {
+    transform: scale(1.05);
+}
+
+/* --- Estilos del título del registro --- */
+.titulo {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: transform 0.3s ease;
+}
+
+/* --- Miniatura (imagen reducida) --- */
+.miniatura {
+    width: 100%;
+    height: 130px; /* Establece una altura fija para la miniatura */
+    object-fit: contain; /* Ajusta la imagen sin recortarla */
+    display: block;
+    margin: 0; /* Elimina cualquier margen adicional */
+    padding: 0; /* Elimina cualquier relleno adicional */
+}
+
+/* --- Contenido desplegable --- */
+.contenido {
+    max-height: 0; /* Inicialmente, el contenido está oculto */
+    opacity: 0; /* El contenido comienza transparente */
+    overflow: hidden; /* Oculta el contenido desbordante */
+    padding: 0 10px;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.contenido img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.contenido p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.contenido p {
+    text-align: justify;
+}
+
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .titulo {
+        font-size: 1.2rem;
+    }
+
+    .miniatura {
+        width: 100%;
+        height: auto;
+    }
+}
+
