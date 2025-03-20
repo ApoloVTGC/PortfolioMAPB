@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('fondo.png') no-repeat center center/cover;
+}
+
+#icono, #icono-2 {
+    position: absolute;
+    opacity: 0; /* Inicialmente invisibles */
+    transition: opacity 1s ease, transform 2s ease;
+}
+
+#icono {
+    width: 150px; /* Tamaño inicial del primer icono */
+    height: 150px; /* Tamaño inicial del primer icono */
+}
+
+#icono-2 {
+    width: 450px; /* Tamaño de la segunda imagen desde el principio */
+    height: 450px; /* Tamaño de la segunda imagen desde el principio */
+    opacity: 0; /* Inicialmente invisible */
+}
+
+.imagen-central {
+    width: 300px; /* Tamaño final para ambas imágenes */
+    height: 300px;
+    transition: opacity 1s ease, transform 2s ease; /* Animación */
+}
+
+/* Animación de aumento cuando el cursor pasa por encima del GIF */
+#gif-container #gif:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del GIF */
+    transition: transform 0.3s ease; /* Más rápido (0.3s) */
+}
+
+/* Animación de aumento cuando el cursor pasa por encima (más rápida) */
+#icono-2:hover {
+    transform: scale(1.05); /* Aumento pequeño de tamaño */
+    transition: transform 0.3s ease; /* Más rápido (0.3s) */
+}
+
+/* Estilos para el contenedor del GIF */
+#gif-container {
+    position: absolute;
+    top: 10%; /* Ajustado para mover el contenedor más arriba */
+    right: -500px;
+    transform: translateY(0);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: right 1.5s ease-out;
+}
+
+/* Estilos para el texto CV */
+#cv-text {
+    font-size: 3rem;
+    font-weight: bold;
+    display: none;
+    position: absolute;
+    top: 170px; /* Ajusta esta propiedad para moverlo más arriba */
+    left: 400px;
+}
+
+/* Animación de la ramificación */
+.ramificacion {
+    position: absolute;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Animación de las líneas */
+.linea {
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.linea.visible {
+    opacity: 1;
+}
+
+.ramificacion.visible {
+    opacity: 1;
+}
+
+.ramificacion a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+.ramificacion a:hover {
+    text-decoration: underline;
+}
+
+
+

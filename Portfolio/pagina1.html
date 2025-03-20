@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Recientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Registro de un proyecto -->
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto1')">Computational Biology and Bioinformatics Conection 12-14th March</button>
+            <!-- Miniatura visible siempre -->
+            <img src="proyecto_conexionesbcb.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto1" class="contenido">
+                <div class="texto-encima">
+                    <p>The objectives of the Momentum program were presented at the Second General Assembly of the CSIC Computational Biology and Bioinformatics Connection (Conexión BCB), held on March 12, 13, and 14, 2025. The presentation focused on various transcriptomics techniques, with particular emphasis on spatial transcriptomics, and explored the application of advanced methodologies in Deep Learning, Machine Learning, and Artificial Intelligence within this field.</p>
+                </div>
+                <img src="proyecto_presentacion_momentum.png" alt="Imagen del Proyecto XYZ" class="imagen-proyecto">
+            </div>
+        </div>
+
+
+
+        <!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto2')">1st Momentum Meeting 26th February</button>
+            <!-- Miniatura visible siempre -->
+            <img src="proyecto_momentum.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto2" class="contenido">
+                <div class="texto-encima">
+                    <p>The First *Momentum* Meeting organized by the CSIC was held at the Center for Theoretical Physics and Mathematics (CFTMAT). This program is designed to attract and train talent in the fields of Artificial Intelligence and advanced digital skills, with 187 contracts dedicated to fostering research in these areas.</p>
+                </div>
+                <img src="proyecto_momentum_2.png" alt="Imagen del Proyecto XYZ" class="imagen-proyecto">
+            </div>
+        </div>
+
+
+<!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto3')">Scientific Congress PTS 3-5 February</button>
+            <!-- Miniatura visible siempre -->
+            <img src="proyecto_pts.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto3" class="contenido">
+                <div class="texto-encima">
+                    <p>In February 2019, the first Research Congress of the Health Science and Technology Park was held. Two years later, following a pandemic that demonstrated Granada’s significant potential in research, development, healthcare, and training, a second edition took place, expanding and consolidating its success by bringing together over 400 researchers and more than 300 presentations.
+
+This event is now set to resume, gathering the research community of the city.
+
+In 2025, the third edition of the congress will be held, bringing together the full research potential of the life sciences and health ecosystem. The main objectives of this edition are to create synergies and foster knowledge transfer between the participating entities and groups, communicate new research findings, introduce the services of various institutions, and promote the offerings and demands of different companies based in Granada.
+
+Additionally, the congress aims to engage the public with this important sector and enhance the visibility of biosanitary research both within the city and beyond, raising its profile on a national level.</p>
+                </div>
+                <img src="proyecto_pts_2.png" alt="Imagen del Proyecto XYZ" class="imagen-proyecto">
+            </div>
+        </div>
+
+
+        <!-- Más registros... -->
+    </div>
+
+    <script>
+      // Función para alternar la visibilidad del contenido con animación
+      function toggleContenido(proyectoId) {
+          const contenido = document.querySelector(`#${proyectoId}`);
+          const registro = contenido.closest('.registro');
+
+          if (contenido.style.maxHeight) {
+              // Si ya está abierto, cerramos
+              contenido.style.maxHeight = null;
+              contenido.style.opacity = 0;
+              registro.classList.remove('open');
+          } else {
+              // Si está cerrado, lo mostramos con la animación
+              contenido.style.maxHeight = contenido.scrollHeight + 'px'; // Ajustamos el máximo de altura
+              contenido.style.opacity = 1;
+              registro.classList.add('open');
+          }
+      }
+    </script>
+</body>
+</html>
+

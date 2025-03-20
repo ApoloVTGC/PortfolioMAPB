@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos Publicados</title>
+    <link rel="stylesheet" href="style2.css">  <!-- Cambiado a style2.css -->
+</head>
+<body>
+    <!-- Título dentro de un rectángulo turquesa -->
+    <div class="titulo-rectangulo">
+        <h1>Publications</h1>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Contenido de los artículos -->
+        <div class="articulos">
+            <div class="articulo">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/">
+                    <img src="logo_articulo.png" alt="Logo Artículo 1" class="logo-articulo">
+                    <p class="nombre-articulo">Exploring the Role of Viral Non-coding RNAs in Host Gene Regulation
+and Disease Development: A Meta-transcriptomics Approach in Human Cancer</p>
+                </a>
+            </div>
+            <div class="articulo">
+                <a href="enlace_articulo2.html">
+                    <img src="logo_articulo.png" alt="Logo Artículo 2" class="logo-articulo">
+                    <p class="nombre-articulo">2nd Paper</p>
+                </a>
+            </div>
+            <!-- Puedes agregar más artículos aquí -->
+        </div>
+    </div>
+
+    <!-- Aquí va el script de JavaScript -->
+    <script>
+        // Función para añadir animación de expansión al pasar el cursor por encima del logo
+        const logos = document.querySelectorAll('.logo-articulo');
+        logos.forEach(logo => {
+            logo.addEventListener('mouseenter', () => {
+                logo.style.transform = 'scale(1.1

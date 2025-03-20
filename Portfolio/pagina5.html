@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Recientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Registro de un proyecto -->
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto1')">IPBLN Institute Visits on Biosecurity  </button>
+            <!-- Miniatura visible siempre -->
+            <img src="divulgación_bioseguridad.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto1" class="contenido">
+                <div class="texto-encima">
+                    <p>During the Institute Visits on Biosafety, students receive detailed information about biosafety principles and practices. The sessions aim to raise awareness about the importance of working safely with biological agents and to familiarize students with the different levels of biosafety laboratories (BSL).
+
+The visits include an explanation of the four biosafety levels:
+
+BSL-1: Laboratories working with low-risk microorganisms that pose minimal threat to humans and the environment. Basic protective measures, such as handwashing and the use of personal protective equipment (PPE), are required.
+BSL-2: Laboratories handling moderate-risk agents associated with human diseases. Additional safety practices include restricted access, biosafety cabinets for certain procedures, and enhanced protective measures.
+BSL-3: Facilities designed for work with potentially lethal or serious airborne pathogens. These laboratories require stricter access controls, specialized ventilation systems, and the use of biosafety cabinets for all manipulations.
+BSL-4: High-containment laboratories dealing with the most dangerous and exotic pathogens, for which there are no available treatments or vaccines. These facilities require full-body protective suits, independent air supply systems, and highly secure access protocols.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto2')">IPBLN Institute Visits on Bioinformatics</button>
+            <!-- Miniatura visible siempre -->
+            <img src="divulgación_bioinformatica.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto2" class="contenido">
+                <div class="texto-encima">
+                    <p>During the Institute Visits on Bioinformatics, students receive comprehensive information about the role of bioinformatics in modern scientific research. The sessions aim to introduce key concepts, tools, and techniques used to analyze biological data and highlight the importance of computational methods in understanding complex biological processes.
+
+The visits cover several fundamental areas of bioinformatics, including:
+
+Genomic Data Analysis: Explaining how large-scale sequencing data is processed and interpreted to identify genes, mutations, and other genetic variations.
+Transcriptomics: Demonstrating how gene expression is analyzed using computational methods to study how genes are activated or repressed under different conditions.
+Protein Structure and Function Prediction: Describing how bioinformatics tools model protein structures and predict their functions, aiding in drug discovery and disease research.
+Biological Databases: Introducing major public databases (such as GenBank and Ensembl) where biological information is stored and accessed for research purposes.
+Computational Tools and Pipelines: Explaining how automated workflows (e.g., using platforms like Nextflow) handle large datasets efficiently, ensuring reproducibility and scalability.
+Applications of Artificial Intelligence and Machine Learning: Highlighting how advanced algorithms are used to analyze complex biological patterns and predict biological behaviors.</p>
+                </div>
+            </div>
+        </div>
+
+
+<!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto3')">IPBLN Science Without Labels</button>
+            <!-- Miniatura visible siempre -->
+            <img src="divulgación_cse.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto3" class="contenido">
+                <div class="texto-encima">
+                    <p>During the Science Without Labels outreach project, efforts are focused on bringing science closer to individuals at risk of social exclusion, including both young people and minors. Through a variety of workshops and interactive activities, the program aims to foster scientific curiosity, break down barriers to scientific knowledge, and make science accessible to everyone, regardless of their background.
+
+The project involves several key activities:
+
+Interactive Workshops: Hands-on sessions where participants engage with scientific concepts through experiments and practical demonstrations tailored to different age groups and educational levels.
+Accessible Science Communication: Simplifying complex scientific ideas to ensure understanding, using inclusive language and adaptable formats to reach diverse audiences.
+Personalized Learning Experiences: Designing activities that cater to the specific needs and interests of each group, encouraging active participation and critical thinking.
+Mentorship and Inspiration: Providing positive role models through interactions with scientists and professionals who share their career paths and personal experiences in science.
+Community Engagement: Collaborating with local organizations and educational institutions to reach and support vulnerable groups, promoting science as an accessible and empowering tool.
+Social Inclusion Through Science: Using scientific knowledge to foster social equity, offering opportunities for skill development, and inspiring participants to explore future educational and career paths.</p>
+                </div>
+            </div>
+        </div>
+
+<!-- ###################Otro registro de proyecto################################### -->
+
+        <div class="registro">
+            <button class="titulo" onclick="toggleContenido('proyecto4')">European Researchers Night in Granada</button>
+            <!-- Miniatura visible siempre -->
+            <img src="divulgación_noche_europea.png" alt="Miniatura Proyecto XYZ" class="miniatura">
+            <!-- Contenido desplegable con la imagen secundaria y texto encima -->
+            <div id="proyecto4" class="contenido">
+                <div class="texto-encima">
+                    <p>In Granada, this event has been celebrated annually since 2012, with the University of Granada playing a significant role in its organization. The 2025 edition is scheduled for September 26, marking the fourteenth consecutive year of participation.
+
+The event aims to bring science closer to the public through various activities such as workshops, experiments, guided tours, and talks on science and research, filling the streets and squares of Andalusian cities. For instance, in the 2024 edition, the University of Granada organized 298 activities in Granada, Ceuta, and Melilla, involving nearly 1,000 researchers.
+
+This initiative provides an opportunity for citizens to engage directly with researchers, discover the human side of research, and learn about the impact of scientific work on daily life. It also aims to inspire new generations to pursue careers in science by showcasing the relevance and excitement of research</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Más registros... -->
+    </div>
+
+    <script>
+      // Función para alternar la visibilidad del contenido con animación
+      function toggleContenido(proyectoId) {
+          const contenido = document.querySelector(`#${proyectoId}`);
+          const registro = contenido.closest('.registro');
+
+          if (contenido.style.maxHeight) {
+              // Si ya está abierto, cerramos
+              contenido.style.maxHeight = null;
+              contenido.style.opacity = 0;
+              registro.classList.remove('open');
+          } else {
+              // Si está cerrado, lo mostramos con la animación
+              contenido.style.maxHeight = contenido.scrollHeight + 'px'; // Ajustamos el máximo de altura
+              contenido.style.opacity = 1;
+              registro.classList.add('open');
+          }
+      }
+    </script>
+</body>
+</html>
+
